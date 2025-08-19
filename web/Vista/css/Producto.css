@@ -177,6 +177,8 @@
     font-style: italic;
     background-color: #f9f9f9;
 }
+
+/* Ocultar el borde inferior cuando solo está el mensaje */
 .product-tableP tbody tr:only-child td.no-records {
     border-bottom: none;
 }
@@ -278,7 +280,7 @@
 }
 
 .tab-button.active:hover {
-    background-color: #4CAF50; 
+    background-color: #4CAF50; /* Mantener el color cuando está activo */
 }
 
 /* Botón de submit principal */

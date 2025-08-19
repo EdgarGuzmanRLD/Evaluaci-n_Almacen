@@ -5,15 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%   HttpSession sesion = request.getSession(false); 
+<%   HttpSession sesion = request.getSession(false); // false = no crear nueva si no existe
     if (sesion != null) {
-        sesion.invalidate(); 
+        sesion.invalidate();  // Cierra la sesión
     }
 %>
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" href="../Imagenes/almacen.png"   type="image/png" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>

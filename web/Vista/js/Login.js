@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Constantes
-    const LOGIN_API_URL = '/Almacen/login'; 
+    const LOGIN_API_URL = '/Almacen/login'; // Asumiendo que refactorizarás el controlador de login también
     const DASHBOARD_URL = '../VistaUsuario/Inicio.jsp';
 
     // Inicialización

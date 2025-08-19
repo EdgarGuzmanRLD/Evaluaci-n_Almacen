@@ -96,25 +96,25 @@ header {
     color: #2c3e50;
 }
 
-/* Estilos de la tabla*/
+/* Estilos de la tabla - MODIFICADO PARA 3 COLUMNAS */
 .product-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    table-layout: fixed; 
+    table-layout: fixed; /* Para controlar el ancho de columnas */
 }
 
 .product-table th, .product-table td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-    word-wrap: break-word; 
+    word-wrap: break-word; /* Para manejar contenido largo */
 }
 
 /* Anchos específicos para cada columna */
 .product-table th:nth-child(1),
 .product-table td:nth-child(1) {
-    width: 60%; 
+    width: 60%; /* Columna más ancha */
 }
 
 .product-table th:nth-child(2),
@@ -150,7 +150,7 @@ header {
     background-color: #f9f9f9;
 }
 
-
+/* Ocultar el borde inferior cuando solo está el mensaje */
 .product-table tbody tr:only-child td.no-records {
     border-bottom: none;
 }

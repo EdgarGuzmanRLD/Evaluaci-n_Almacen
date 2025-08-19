@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" href="../Imagenes/almacen.png"   type="image/png" />
         <meta charset="UTF-8">
         <title>Sistema de Inventario</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

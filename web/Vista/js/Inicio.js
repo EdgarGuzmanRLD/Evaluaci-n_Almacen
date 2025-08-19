@@ -7,6 +7,11 @@ $(document).ready(function () {
     
     function init() {
         consultarProductos();
+        setupEventListeners();
+    }
+    
+    function setupEventListeners() {
+        // Aquí puedes agregar listeners para otros eventos si es necesario
     }
     
     function consultarProductos() {
@@ -44,6 +49,7 @@ $(document).ready(function () {
         productos.forEach(producto => {
             const $row = $('<tr>');
             
+            // Asegúrate de que los nombres de las propiedades coincidan con el modelo Java
             $row.append($('<td>').text(producto.nombre_Producto || producto.Nombre_Producto));
             $row.append($('<td>').text(producto.cantidad || producto.Cantidad));
             $row.append($('<td>').text(producto.unidad || producto.Unidad));
@@ -53,7 +59,7 @@ $(document).ready(function () {
     }
     
     function agregarBotonesAccion($row, producto) {
-        
+        // Ejemplo: agregar botones de editar/eliminar según sea necesario
         const $accionesCell = $('<td>').addClass('text-center');
         
         // Botón para cambiar estatus (activar/desactivar)
@@ -102,7 +108,7 @@ $(document).ready(function () {
                 showLoading(false);
                 if (response === 'success') {
                     showSuccess('Estado del producto actualizado correctamente');
-                    consultarProductos(); 
+                    consultarProductos(); // Refrescar la tabla
                 } else {
                     showError(response || 'Error al cambiar el estado del producto');
                 }
@@ -128,6 +134,7 @@ $(document).ready(function () {
     
     function showLoading(show) {
         if (show) {
+            // Puedes usar un SweetAlert como loader
             Swal.fire({
                 title: 'Cargando...',
                 allowOutsideClick: false,

@@ -18,11 +18,18 @@ public class UnidadMedidaDAO {
         List<Unidad_Medida> unidades = new ArrayList<>();
         String sql = "SELECT Id_Unidad, Unidad FROM Unidad_Medida";
 
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
 
-        try (Connection conn = conexion.Conectar();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql))  {
+        try {
+            conn = conexion.Conectar();
+            if (conn == null || conn.isClosed()) {
+                throw new SQLException("Conexión a la base de datos no disponible");
+            }
 
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
                 unidades.add(new Unidad_Medida(
@@ -30,9 +37,40 @@ public class UnidadMedidaDAO {
                         rs.getString("Unidad")
                 ));
             }
-        } 
+        } catch (SQLException e) {
+            // Loggear el error
+            System.err.println("Error al obtener unidades de medida: " + e.getMessage());
+            throw e; // Relanzar la excepción
+        } finally {
+            closeResources(rs, stmt, conn);
+        }
 
         return unidades;
     }
 
+    private void closeResources(ResultSet rs, Statement stmt, Connection conn) {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cerrar ResultSet: " + e.getMessage());
+        }
+
+        try {
+            if (stmt != null) {
+                stmt.close();
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cerrar Statement: " + e.getMessage());
+        }
+
+        try {
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cerrar Connection: " + e.getMessage());
+        }
+    }
 }

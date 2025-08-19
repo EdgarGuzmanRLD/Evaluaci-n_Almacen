@@ -1,6 +1,5 @@
 
 const API_BASE_URL = '/Almacen/productos';
-const API_BASE_URL_Unidades = '/Almacen/unidadMedida';
 
 // Inicializar la primera pestaña como activa
 const firstAvailableTab = $('.tab-button').first().data('tab') || 'salidas-tab';
@@ -56,7 +55,7 @@ function openTab(tabId) {
 function cargarUnidades() {
     $.ajax({
         type: 'POST',
-        url: API_BASE_URL_Unidades,
+        url: API_BASE_URL,
         data: {action: 'consultarUnidades'},
         dataType: 'json',
         success: function (response) {
@@ -387,7 +386,7 @@ function showSuccessWithConfirmation(message, tabToOpen) {
         text: message,
         showConfirmButton: true,
         confirmButtonText: 'Aceptar',
-        timer: null,
+        timer: null, // Eliminamos el autoclose
         allowOutsideClick: false
     }).then((result) => {
         if (result.isConfirmed) {

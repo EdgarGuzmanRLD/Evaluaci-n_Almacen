@@ -86,12 +86,12 @@
     padding: 12px 8px;
 }
 
-.bitacora-table td:nth-child(4) { 
+.bitacora-table td:nth-child(4) { /* Columna cantidad */
     text-align: right;
     font-family: monospace;
 }
 
-.bitacora-table td:nth-child(5), 
+.bitacora-table td:nth-child(5), /* Columnas fecha y hora */
 .bitacora-table td:nth-child(6) {
     font-family: monospace;
     white-space: nowrap;

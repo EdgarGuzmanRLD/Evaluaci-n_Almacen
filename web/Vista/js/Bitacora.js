@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Constantes
-    const API_BASE_URL = '/Almacen/bitacora';
+    const API_BASE_URL = '/Almacen/productos';
     const BITACORA_FILTERS = {
         ALL: 'all',
         INGRESO: 'ingreso',
