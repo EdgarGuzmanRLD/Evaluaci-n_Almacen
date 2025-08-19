@@ -4,9 +4,13 @@ Repositorio creado con el fin de compartir mi prueba para ser evaluada.
 Hola que tal soy Edgar Emanuel Guzmán Zuñiga y para este proyecto utilice los siguientes recursos para elaborar el proyecto.
 *************************************************************
 *IDE y lenguaje:
+
 -Utilice el IDE Netbeans 8.2.
 -Java 8 con el JDK en su versión 8u202
+
+
 *DBMS
+
 Para la gestión de Bases de datos opte por:
 -SQL SERVER 2022 y SQL Managment Sudio versión 19.3.4
 
@@ -49,4 +53,10 @@ jdbc:sqlserver://localhost:1433;  //En caso de ser nuestra primera instancia SQL
 jdbc:sqlserver://localhost\\Nombre_Instancia; //EJ:jdbc:sqlserver://localhost\\SQLEXPRESS;
 
 Al terminar estos pasos ya estamos listos para realizar pruebas.
+
+
+/*CREDENCIALES*/
+
+Usuario: Administrador	Contraseña: admin123
+Usuario: Almacenista	Contraseña: user123
 
